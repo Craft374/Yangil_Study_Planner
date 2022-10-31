@@ -11,11 +11,8 @@ public class CalendarController : MonoBehaviour
     public GameObject _calendarPanel;
     public Text _yearNumText;
     public Text _monthNumText;
-    public Text _dayNumText;
     public static string plsplspls;
-    public UnityEvent date_click;
     public GameObject _item;
-    public Text notememo;
 
     public List<GameObject> _dateItems = new List<GameObject>();
     const int _totalDateNum = 42;
@@ -25,8 +22,7 @@ public class CalendarController : MonoBehaviour
 
     void Start()
     {
-        plsplspls = "asd";
-        var input = gameObject.GetComponent<InputField>();
+        _calendarPanel.SetActive(true);
         _calendarInstance = this;
         Vector3 startPos = _item.transform.localPosition;
         _dateItems.Clear();
@@ -48,7 +44,7 @@ public class CalendarController : MonoBehaviour
 
         CreateCalendar();
 
-        _calendarPanel.SetActive(false);
+        //_calendarPanel.SetActive(false);
     }
 
     void CreateCalendar()
@@ -126,43 +122,33 @@ public class CalendarController : MonoBehaviour
 
     Text _target;
 
-    
-
     //Item 클릭했을 경우 Text에 표시.
     public void OnDateItemClick(string day)
     {
-        //_dayNumText.text = "asd";
-        //CalendarController._calendarInstance.OnDateItemClick(gameObject.GetComponentInChildren<Text>().text);
-        date_click.Invoke();
-        _target.text = _yearNumText.text + "-" + _monthNumText.text + "-" + int.Parse(day).ToString("D2");
-        _calendarPanel.SetActive(false);
+        //_target.text = _yearNumText.text + "-" + _monthNumText.text + "-" + int.Parse(day).ToString("D2");
+        //_calendarPanel.SetActive(false);
         Debug.Log(_yearNumText.text + "-" + _monthNumText.text + "-" + day);
         plsplspls = Convert.ToString(day);
         Debug.Log(plsplspls);
-        //Debug.Log(Convert.ToString(day));
-        //_dayNumText.text = Convert.ToString(day);
-        if (_dayNumText != null)
-        {
-            Debug.Log(_dayNumText);
-        }
         
-       /* string fullPath = "Assets/test/";
-        if (File.Exists(fullPath) == false)
-        {
-            var file = File.CreateText(fullPath + _yearNumText.text + "-" + _monthNumText.text + "-" + day + ".txt");
-            file.Close();
-        }
-        Debug.Log(DateTime.Now.ToString("yyyy"));
-        StreamWriter sw = new StreamWriter(fullPath + _yearNumText.text + "-" + _monthNumText.text + "-" + day + ".txt");
-        string memomemo = Testff.text;
-        sw.WriteLine(memomemo);
-        sw.Flush();
-        sw.Close();*/
     }
+
     public void Notetest(InputField Testff)
     {
         Debug.Log("메모 테스트" + Testff.text);
         Debug.Log(plsplspls);
+        string fullPath = "Assets/test/";
+        if (File.Exists(fullPath) == false)
+        {
+            var file = File.CreateText(fullPath + _yearNumText.text + "-" + _monthNumText.text + "-" + plsplspls + ".txt");
+            file.Close();
+        }
+        Debug.Log(DateTime.Now.ToString("yyyy"));
+        StreamWriter sw = new StreamWriter(fullPath + _yearNumText.text + "-" + _monthNumText.text + "-" + plsplspls + ".txt");
+        string memomemo = Testff.text;
+        //Debug.Log(Testff.text);
+        sw.WriteLine(memomemo);
+        sw.Flush();
+        sw.Close();
     }
-
 }
