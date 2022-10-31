@@ -869,7 +869,12 @@ MonoBehaviour:
   _calendarPanel: {fileID: 1000010285690406}
   _yearNumText: {fileID: 114000013483154762}
   _monthNumText: {fileID: 114000013415977530}
+  _dayNumText: {fileID: 0}
+  date_click:
+    m_PersistentCalls:
+      m_Calls: []
   _item: {fileID: 1000011155391382}
+  notememo: {fileID: 0}
   _dateItems: []
 --- !u!1 &1000012398401946
 GameObject:

@@ -123,37 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &33671039
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 33671040}
-  m_Layer: 0
-  m_Name: month
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &33671040
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 33671039}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 97.20579, y: 1791.1956, z: 10.150734}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &187103421
 GameObject:
   m_ObjectHideFlags: 0
@@ -245,6 +214,8 @@ GameObject:
   - component: {fileID: 221405924}
   - component: {fileID: 221405923}
   - component: {fileID: 221405922}
+  - component: {fileID: 221405926}
+  - component: {fileID: 221405925}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -302,37 +273,37 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &236795639
-GameObject:
+--- !u!114 &221405925
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 236795640}
-  m_Layer: 0
-  m_Name: year
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &236795640
-Transform:
+  m_GameObject: {fileID: 221405921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2fe5546f775c47d2820aa5e8a715f53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _data:
+    _json: '{"nest":{"source":"Macro","macro":0,"embed":null}}'
+    _objectReferences:
+    - {fileID: 11400000, guid: bd918ec6b28f2a94da831b3fa5007f78, type: 2}
+--- !u!114 &221405926
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 236795639}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 97.20579, y: 1791.1956, z: 10.150734}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_GameObject: {fileID: 221405921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e741851cba3ad425c91ecf922cc6b379, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _data:
+    _json: '{"declarations":{"Kind":"Object","collection":{"$content":[],"$version":"A"},"$version":"A"}}'
+    _objectReferences: []
 --- !u!1 &379564589
 GameObject:
   m_ObjectHideFlags: 0
@@ -413,6 +384,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 379564589}
   m_CullTransparentMesh: 1
+--- !u!114 &469836748 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114000013486585182, guid: 0ba8e1d2c401a3348a37d2b2d19e0a9d, type: 3}
+  m_PrefabInstance: {fileID: 1543892565}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea51964c1ed62bd49b030e4ab1e6b629, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &646179056 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 224000012321101736, guid: 0ba8e1d2c401a3348a37d2b2d19e0a9d, type: 3}
@@ -430,8 +412,9 @@ GameObject:
   - component: {fileID: 674254602}
   - component: {fileID: 674254600}
   - component: {fileID: 674254603}
+  - component: {fileID: 674254604}
   m_Layer: 5
-  m_Name: InputField (Legacy)
+  m_Name: Testff
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -515,13 +498,25 @@ MonoBehaviour:
       m_Calls: []
   m_OnDidEndEdit:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 674254604}
+        m_TargetAssemblyTypeName: CalendarController, Assembly-CSharp
+        m_MethodName: Notetest
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 674254600}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.InputField, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
   m_CaretColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   m_CustomCaretColor: 0
-  m_SelectionColor: {r: 0.65882355, g: 0.80784315, b: 1, a: 0.7529412}
+  m_SelectionColor: {r: 0.65882355, g: 0.80784315, b: 1, a: 0.6745098}
   m_Text: Enter Text
   m_CaretBlinkRate: 0.3
   m_CaretWidth: 1
@@ -565,6 +560,28 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &674254604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 674254598}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a65b983b6ab00bc4dbb0ba158aa4c3ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _calendarPanel: {fileID: 0}
+  _yearNumText: {fileID: 0}
+  _monthNumText: {fileID: 0}
+  _dayNumText: {fileID: 0}
+  date_click:
+    m_PersistentCalls:
+      m_Calls: []
+  _item: {fileID: 0}
+  notememo: {fileID: 0}
+  _dateItems: []
 --- !u!1 &744533981
 GameObject:
   m_ObjectHideFlags: 0
@@ -725,7 +742,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1082707523
+--- !u!1 &1356299125
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -733,36 +750,52 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1082707525}
-  - component: {fileID: 1082707524}
+  - component: {fileID: 1356299128}
+  - component: {fileID: 1356299127}
+  - component: {fileID: 1356299126}
   m_Layer: 0
-  m_Name: text
+  m_Name: VisualScripting SceneVariables
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1082707524
+--- !u!114 &1356299126
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1082707523}
+  m_GameObject: {fileID: 1356299125}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e7de83164b016544892411ecaabc99c7, type: 3}
+  m_Script: {fileID: 11500000, guid: 765181c9ef4b24d32a4f7cbd2ef370dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!4 &1082707525
+--- !u!114 &1356299127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1356299125}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e741851cba3ad425c91ecf922cc6b379, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _data:
+    _json: '{"declarations":{"Kind":"Scene","collection":{"$content":[],"$version":"A"},"$version":"A"}}'
+    _objectReferences: []
+--- !u!4 &1356299128
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1082707523}
+  m_GameObject: {fileID: 1356299125}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 97.20579, y: 1791.1956, z: 10.150734}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -787,6 +820,30 @@ PrefabInstance:
     - target: {fileID: 114000012970681898, guid: 0ba8e1d2c401a3348a37d2b2d19e0a9d, type: 3}
       propertyPath: m_FontData.m_HorizontalOverflow
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000012982789314, guid: 0ba8e1d2c401a3348a37d2b2d19e0a9d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000012982789314, guid: 0ba8e1d2c401a3348a37d2b2d19e0a9d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000012982789314, guid: 0ba8e1d2c401a3348a37d2b2d19e0a9d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 469836748}
+    - target: {fileID: 114000012982789314, guid: 0ba8e1d2c401a3348a37d2b2d19e0a9d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000012982789314, guid: 0ba8e1d2c401a3348a37d2b2d19e0a9d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnDateItemClick
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000012982789314, guid: 0ba8e1d2c401a3348a37d2b2d19e0a9d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: CalendarDateItem, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 224000012321101736, guid: 0ba8e1d2c401a3348a37d2b2d19e0a9d, type: 3}
       propertyPath: m_Pivot.x
@@ -818,11 +875,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 224000012321101736, guid: 0ba8e1d2c401a3348a37d2b2d19e0a9d, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 308.68994
+      value: 310
       objectReference: {fileID: 0}
     - target: {fileID: 224000012321101736, guid: 0ba8e1d2c401a3348a37d2b2d19e0a9d, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 275.99
+      value: 275
       objectReference: {fileID: 0}
     - target: {fileID: 224000012321101736, guid: 0ba8e1d2c401a3348a37d2b2d19e0a9d, type: 3}
       propertyPath: m_LocalScale.x
