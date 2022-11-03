@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.IO;
 using UnityEngine.Events;
+using UnityEngine.Android;
 
 public class CalendarController : MonoBehaviour
 {
@@ -14,6 +15,19 @@ public class CalendarController : MonoBehaviour
     public static string plsplspls;
     public GameObject _item;
 
+    public static string APM1;
+    public static bool AM1;
+    public static bool AM2;
+    public static bool AM3;
+
+    public static string time1;
+    public static string time2;
+    public static string time3;
+
+    public static string note1;
+    public static string note2;
+    public static string note3;
+
     public List<GameObject> _dateItems = new List<GameObject>();
     const int _totalDateNum = 42;
 
@@ -22,6 +36,15 @@ public class CalendarController : MonoBehaviour
 
     void Start()
     {
+        APM1 = GameObject.Find("APM button1").GetComponent<Text>();
+        AM1 = true;
+        AM2 = true;
+        AM3 = true;
+        bool pandan = true;
+        /*if (!Permission.HasUserAuthorizedPermission(Permission.Camera))
+        {
+            Permission.RequestUserPermission(Permission.Camera);
+        }*/
         _calendarPanel.SetActive(true);
         _calendarInstance = this;
         Vector3 startPos = _item.transform.localPosition;
@@ -46,7 +69,11 @@ public class CalendarController : MonoBehaviour
 
         //_calendarPanel.SetActive(false);
     }
-
+    void Update()
+    {
+ 
+        
+    }
     void CreateCalendar()
     {
         DateTime firstDay = _dateTime.AddDays(-(_dateTime.Day - 1));
@@ -130,12 +157,26 @@ public class CalendarController : MonoBehaviour
         Debug.Log(_yearNumText.text + "-" + _monthNumText.text + "-" + day);
         plsplspls = Convert.ToString(day);
         Debug.Log(plsplspls);
-        
     }
 
-    public void Notetest(InputField Testff)
+    public void APM1Click()
     {
-        Debug.Log("메모 테스트" + Testff.text);
+        if (AM1 == true)
+        {
+            APM1.text = "PM";
+            AM1 = false;
+        }
+
+        if (AM1 == false)
+        {
+            APM1.text = "AM";
+            AM1 = true;
+        }
+    }
+
+    public void Note1(InputField NoteField1)
+    {
+        Debug.Log("메모 테스트: " + NoteField1.text);
         Debug.Log(plsplspls);
         string fullPath = "Assets/test/";
         if (File.Exists(fullPath) == false)
@@ -143,12 +184,13 @@ public class CalendarController : MonoBehaviour
             var file = File.CreateText(fullPath + _yearNumText.text + "-" + _monthNumText.text + "-" + plsplspls + ".txt");
             file.Close();
         }
-        Debug.Log(DateTime.Now.ToString("yyyy"));
+        //Debug.Log(DateTime.Now.ToString("yyyy"));
         StreamWriter sw = new StreamWriter(fullPath + _yearNumText.text + "-" + _monthNumText.text + "-" + plsplspls + ".txt");
-        string memomemo = Testff.text;
+        string memomemo = NoteField1.text;
         //Debug.Log(Testff.text);
         sw.WriteLine(memomemo);
         sw.Flush();
         sw.Close();
     }
+
 }
