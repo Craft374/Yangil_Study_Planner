@@ -168,7 +168,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 61716033}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
@@ -184,17 +184,17 @@ MonoBehaviour:
   m_FontData:
     m_Font: {fileID: 12800000, guid: 76f831161c59c5440a1d0fd40a1808cc, type: 3}
     m_FontSize: 90
-    m_FontStyle: 2
+    m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 9
     m_MaxSize: 90
-    m_Alignment: 0
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Enter text...
+  m_Text: "\uACC4\uD68D\uC744 \uC785\uB825\uD558\uC138\uC694"
 --- !u!222 &61716036
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -349,7 +349,7 @@ MonoBehaviour:
   m_CaretColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   m_CustomCaretColor: 0
   m_SelectionColor: {r: 0.65882355, g: 0.80784315, b: 1, a: 0.6745098}
-  m_Text: "\uACC4\uD68D\uC744 \uC785\uB825\uD558\uC138\uC694"
+  m_Text: 
   m_CaretBlinkRate: 0.3
   m_CaretWidth: 1
   m_ReadOnly: 0
@@ -407,13 +407,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 187103421}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 0.5}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 0.5019608}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -423,17 +423,17 @@ MonoBehaviour:
   m_FontData:
     m_Font: {fileID: 12800000, guid: 76f831161c59c5440a1d0fd40a1808cc, type: 3}
     m_FontSize: 90
-    m_FontStyle: 2
+    m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 9
     m_MaxSize: 90
-    m_Alignment: 0
+    m_Alignment: 4
     m_AlignByGeometry: 0
-    m_RichText: 1
+    m_RichText: 0
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Enter text...
+  m_Text: "\uACC4\uD68D\uC744 \uC785\uB825\uD558\uC138\uC694"
 --- !u!222 &187103424
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -715,7 +715,7 @@ GameObject:
   - component: {fileID: 379564592}
   - component: {fileID: 379564591}
   m_Layer: 5
-  m_Name: Text (Legacy)
+  m_Name: Note Text1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -774,7 +774,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uACC4\uD68D\uC744 \uC785\uB825\uD558\uC138\uC694"
+  m_Text: 
 --- !u!222 &379564592
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1469,7 +1469,7 @@ MonoBehaviour:
   m_CaretColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   m_CustomCaretColor: 0
   m_SelectionColor: {r: 0.65882355, g: 0.80784315, b: 1, a: 0.6745098}
-  m_Text: "\uACC4\uD68D\uC744 \uC785\uB825\uD558\uC138\uC694"
+  m_Text: 
   m_CaretBlinkRate: 0.3
   m_CaretWidth: 1
   m_ReadOnly: 0
@@ -1524,7 +1524,7 @@ GameObject:
   - component: {fileID: 705394914}
   - component: {fileID: 705394913}
   m_Layer: 5
-  m_Name: Text (Legacy)
+  m_Name: Note Text3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1583,7 +1583,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uACC4\uD68D\uC744 \uC785\uB825\uD558\uC138\uC694"
+  m_Text: 
 --- !u!222 &705394914
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1713,7 +1713,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 781494603}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
@@ -1729,17 +1729,17 @@ MonoBehaviour:
   m_FontData:
     m_Font: {fileID: 12800000, guid: 76f831161c59c5440a1d0fd40a1808cc, type: 3}
     m_FontSize: 90
-    m_FontStyle: 2
+    m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 9
     m_MaxSize: 90
-    m_Alignment: 0
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Enter text...
+  m_Text: "\uACC4\uD68D\uC744 \uC785\uB825\uD558\uC138\uC694"
 --- !u!222 &781494606
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1894,7 +1894,7 @@ MonoBehaviour:
   m_CaretColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   m_CustomCaretColor: 0
   m_SelectionColor: {r: 0.65882355, g: 0.80784315, b: 1, a: 0.6745098}
-  m_Text: "\uACC4\uD68D\uC744 \uC785\uB825\uD558\uC138\uC694"
+  m_Text: 
   m_CaretBlinkRate: 0.3
   m_CaretWidth: 1
   m_ReadOnly: 0
@@ -3154,7 +3154,7 @@ GameObject:
   - component: {fileID: 1913775455}
   - component: {fileID: 1913775454}
   m_Layer: 5
-  m_Name: Text (Legacy)
+  m_Name: Note Text2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3213,7 +3213,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uACC4\uD68D\uC744 \uC785\uB825\uD558\uC138\uC694"
+  m_Text: 
 --- !u!222 &1913775455
 CanvasRenderer:
   m_ObjectHideFlags: 0

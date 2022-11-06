@@ -15,26 +15,27 @@ public class CalendarController : MonoBehaviour
     public static string _dayNumText;
     public GameObject _item;
 
+    public static Text NoteText1;
+    public static Text NoteText2;
+    public static Text NoteText3;
     public static Text APM1;
     public static Text APM2;
     public static Text APM3;
-
     public static bool AM1;
     public static bool AM2;
     public static bool AM3;
     public static bool pandan;
-
     public static string time1;
     public static string time2;
     public static string time3;
-
     public static string note1;
     public static string note2;
     public static string note3;
-
+    public static InputField input1;
+    public static InputField input2;
+    public static InputField input3;
     public List<GameObject> _dateItems = new List<GameObject>();
     const int _totalDateNum = 42;
-
     private DateTime _dateTime;
     public static CalendarController _calendarInstance;
 
@@ -45,21 +46,33 @@ public class CalendarController : MonoBehaviour
         APM2 = GameObject.Find("APM Text2").GetComponent<Text>();
         APM3 = GameObject.Find("APM Text3").GetComponent<Text>();
 
+        GameObject NoteText1 = GameObject.Find("NoteField1");
+        input1 = NoteText1.GetComponent<InputField>();
+
+        GameObject NoteText2 = GameObject.Find("NoteField2");
+        input2 = NoteText2.GetComponent<InputField>();
+
+        GameObject NoteText3 = GameObject.Find("NoteField3");
+        input3 = NoteText3.GetComponent<InputField>();
+
         AM1 = true;
         AM2 = true;
         AM3 = true;
-
+        
         note1 = "";
         note2 = "";
         note3 = "";
-        
         pandan = true;
 
-        /*if (!Permission.HasUserAuthorizedPermission(Permission.Camera))
+        if (!Permission.HasUserAuthorizedPermission(Permission.ExternalStorageRead))
         {
-            Permission.RequestUserPermission(Permission.Camera);
-        }*/
-
+            Permission.RequestUserPermission(Permission.ExternalStorageRead);
+        }
+        if (!Permission.HasUserAuthorizedPermission(Permission.ExternalStorageWrite))
+        {
+            Permission.RequestUserPermission(Permission.ExternalStorageWrite);
+        }
+        
         _calendarPanel.SetActive(true);
         _calendarInstance = this;
         Vector3 startPos = _item.transform.localPosition;
@@ -171,26 +184,80 @@ public class CalendarController : MonoBehaviour
         //_calendarPanel.SetActive(false);
         Debug.Log(_yearNumText.text + "-" + _monthNumText.text + "-" + day);
         _dayNumText = Convert.ToString(day);
-        
-        string[] textValue = System.IO.File.ReadAllLines(path);
-        bool justice;
-        justice = true;
-        int i;
-        i = 0;
-        while (justice == true)
-        {
-            if (i < 9)
-            {
-                sw.WriteLine(textValue[i]);
-                i += 1;
-            }
 
-            else
+        string fullPath = Application.persistentDataPath;
+        string path = fullPath + _yearNumText.text + "-" + _monthNumText.text + "-" + _dayNumText + ".txt";
+
+        APM1.text = "AM";
+        AM1 = true;
+        APM2.text = "AM";
+        AM2 = true;
+        APM3.text = "AM";
+        AM3 = true;
+
+        input1.text = "";
+        input2.text = "";
+        input3.text = "";
+
+        // if (File.Exists(path) == false)
+        // {
+        //     var file = File.CreateText(fullPath + _yearNumText.text + "-" + _monthNumText.text + "-" + _dayNumText + ".txt");
+        //     StreamWriter sw = new StreamWriter(fullPath + _yearNumText.text + "-" + _monthNumText.text + "-" + _dayNumText + ".txt");
+        //     //sw.WriteLine("FALSE");
+        //     sw.Flush();
+        //     sw.Close();
+        // }
+
+        if (File.Exists(path) == true)
+        {
+            string[] textValue = System.IO.File.ReadAllLines(path);
+
+            if (textValue[0] == "TRUE" )
             {
-                justice = false;    
+                if (textValue[1] == "False")
+                {
+                    AM1 = false;
+                    APM1.text = "PM";
+                }
+
+                if (textValue[1] == "True")
+                {
+                    AM1 = true;
+                    APM1.text = "AM";
+                }
+
+                if (textValue[2] == "False")
+                {
+                    AM2 = false;
+                    APM2.text = "PM";
+                }
+
+                if (textValue[2] == "True")
+                {
+                    AM2 = true;
+                    APM2.text = "AM";
+                }
+
+                if (textValue[3] == "False")
+                {
+                    AM3 = false;
+                    APM3.text = "PM";
+                }
+
+                if (textValue[3] == "True")
+                {
+                    AM3 = true;
+                    APM3.text = "AM";
+                }
+
+                input1.text = textValue[4].ToString();
+                input2.text = textValue[5].ToString();
+                input3.text = textValue[6].ToString();
             }
         }
     }
+            
+    
 
     public void APM1Click()
     {
@@ -255,7 +322,11 @@ public class CalendarController : MonoBehaviour
     public void Note1(InputField NoteField1)
     {
         Debug.Log("메모 테스트: " + NoteField1.text);
-        note1 = NoteField1.text;
+        note1 = NoteField1.text;   
+        if (NoteField1.text == "")
+        {
+            note1 = "";
+        }
         Debug.Log(note1);
     }
 
@@ -263,6 +334,10 @@ public class CalendarController : MonoBehaviour
     {
         Debug.Log("메모 테스트: " + NoteField2.text);
         note2 = NoteField2.text;
+        if (NoteField2.text == "")
+        {
+            note2 = "";
+        }
         Debug.Log(note2);
     }
 
@@ -270,12 +345,16 @@ public class CalendarController : MonoBehaviour
     {
         Debug.Log("메모 테스트: " + NoteField3.text);
         note3 = NoteField3.text;
+        if (NoteField3.text == "")
+        {
+            note3 = "";
+        }
         Debug.Log(note3);
     }
 
     public void SaveNote()
     {
-        string fullPath = "Assets/test/";
+        string fullPath = Application.persistentDataPath;
         if (File.Exists(fullPath) == false)
         {
             var file = File.CreateText(fullPath + _yearNumText.text + "-" + _monthNumText.text + "-" + _dayNumText + ".txt");
@@ -284,6 +363,8 @@ public class CalendarController : MonoBehaviour
         //Debug.Log(DateTime.Now.ToString("yyyy"));
         StreamWriter sw = new StreamWriter(fullPath + _yearNumText.text + "-" + _monthNumText.text + "-" + _dayNumText + ".txt");
         
+        sw.WriteLine("TRUE");
+
         sw.WriteLine(AM1);
         sw.WriteLine(AM2);
         sw.WriteLine(AM3);
@@ -295,6 +376,25 @@ public class CalendarController : MonoBehaviour
         sw.Flush();
         sw.Close();
         Debug.Log("save");
-    }
 
+        string path = fullPath + _yearNumText.text + "-" + _monthNumText.text + "-" + _dayNumText + ".txt";
+        string[] textValue = System.IO.File.ReadAllLines(path);
+        bool justice;
+        justice = true;
+        int i;
+        i = 0;
+        while (justice == true)
+        {
+            if (i < 7)
+            {
+                Debug.Log(textValue[i]);
+                i += 1;
+            }
+
+            else
+            {
+                justice = false;    
+            }
+        }
+    }
 }
