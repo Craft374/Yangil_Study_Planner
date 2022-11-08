@@ -34,6 +34,12 @@ public class CalendarController : MonoBehaviour
     public static InputField input1;
     public static InputField input2;
     public static InputField input3;
+    public static InputField timeinput1;
+    public static InputField timeinput2;
+    public static InputField timeinput3;
+    public static Text tabni1;
+    public static Text tabni2;
+    public static Text tabni3;
     public List<GameObject> _dateItems = new List<GameObject>();
     const int _totalDateNum = 42;
     private DateTime _dateTime;
@@ -46,6 +52,15 @@ public class CalendarController : MonoBehaviour
         APM2 = GameObject.Find("APM Text2").GetComponent<Text>();
         APM3 = GameObject.Find("APM Text3").GetComponent<Text>();
 
+        GameObject tabni1 = GameObject.Find("TimeField1");
+        timeinput1 = tabni1.GetComponent<InputField>();
+
+        GameObject tabni2 = GameObject.Find("TimeField2");
+        timeinput2 = tabni2.GetComponent<InputField>();
+
+        GameObject tabni3 = GameObject.Find("TimeField3");
+        timeinput3 = tabni3.GetComponent<InputField>();
+        
         GameObject NoteText1 = GameObject.Find("NoteField1");
         input1 = NoteText1.GetComponent<InputField>();
 
@@ -350,6 +365,21 @@ public class CalendarController : MonoBehaviour
             note3 = "";
         }
         Debug.Log(note3);
+    }
+
+    public void Timefield1(InputField TimeField1)
+    {
+        
+    }
+
+    public void Timefield2(InputField TimeField2)
+    {
+
+    }
+
+    public void Timefield3(InputField TimeField3)
+    {
+
     }
 
     public void SaveNote()
