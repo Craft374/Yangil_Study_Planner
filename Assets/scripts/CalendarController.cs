@@ -14,6 +14,8 @@ public class CalendarController : MonoBehaviour
     public Text _monthNumText;
     public static string _dayNumText;
     public GameObject _item;
+    public GameObject bgi;
+    public Image BGImage;
 
     public static Text NoteText1;
     public static Text NoteText2;
@@ -44,6 +46,9 @@ public class CalendarController : MonoBehaviour
     const int _totalDateNum = 42;
     private DateTime _dateTime;
     public static CalendarController _calendarInstance;
+    [SerializeField]
+    public Sprite[] sprites;
+    public int index;
 
     void Start()
     {
@@ -70,6 +75,9 @@ public class CalendarController : MonoBehaviour
         GameObject NoteText3 = GameObject.Find("NoteField3");
         input3 = NoteText3.GetComponent<InputField>();
 
+        GameObject bgi = GameObject.Find("backimage");
+        BGImage = bgi.GetComponent<Image>();
+
         AM1 = true;
         AM2 = true;
         AM3 = true;
@@ -77,6 +85,11 @@ public class CalendarController : MonoBehaviour
         note1 = "";
         note2 = "";
         note3 = "";
+
+        time1 = "";
+        time2 = "";
+        time3 = "";
+
         pandan = true;
 
         if (!Permission.HasUserAuthorizedPermission(Permission.ExternalStorageRead))
@@ -112,11 +125,7 @@ public class CalendarController : MonoBehaviour
 
         //_calendarPanel.SetActive(false);
     }
-    void Update()
-    {
-        
-        
-    }
+   
     void CreateCalendar()
     {
         DateTime firstDay = _dateTime.AddDays(-(_dateTime.Day - 1));
@@ -142,6 +151,29 @@ public class CalendarController : MonoBehaviour
         }
         _yearNumText.text = _dateTime.Year.ToString();
         _monthNumText.text = _dateTime.Month.ToString("D2");
+    }
+
+    void Update()
+    {
+        if(_monthNumText.text == "03"||_monthNumText.text == "04" ||_monthNumText.text == "05")
+        {
+            BGImage.sprite = sprites[0];
+        }
+
+        if(_monthNumText.text == "06"||_monthNumText.text == "07" ||_monthNumText.text == "08")
+        {
+            BGImage.sprite = sprites[1];
+        }
+
+        if(_monthNumText.text == "09"||_monthNumText.text == "10" ||_monthNumText.text == "11")
+        {
+            BGImage.sprite = sprites[2];
+        }
+
+        if(_monthNumText.text == "12"||_monthNumText.text == "01" ||_monthNumText.text == "02")
+        {
+            BGImage.sprite = sprites[3];
+        }
     }
 
     int GetDays(DayOfWeek day)
@@ -195,6 +227,7 @@ public class CalendarController : MonoBehaviour
     //Item 클릭했을 경우 Text에 표시.
     public void OnDateItemClick(string day)
     {
+        //GameObject.Find("item").GetComponent<Image>().color = new Color32(255,255,225,100);
         //_target.text = _yearNumText.text + "-" + _monthNumText.text + "-" + int.Parse(day).ToString("D2");
         //_calendarPanel.SetActive(false);
         Debug.Log(_yearNumText.text + "-" + _monthNumText.text + "-" + day);
@@ -213,6 +246,10 @@ public class CalendarController : MonoBehaviour
         input1.text = "";
         input2.text = "";
         input3.text = "";
+
+        timeinput1.text = "";
+        timeinput2.text = "";
+        timeinput3.text = "";
 
         // if (File.Exists(path) == false)
         // {
@@ -268,6 +305,9 @@ public class CalendarController : MonoBehaviour
                 input1.text = textValue[4].ToString();
                 input2.text = textValue[5].ToString();
                 input3.text = textValue[6].ToString();
+                timeinput1.text = textValue[7].ToString();
+                timeinput2.text = textValue[8].ToString();
+                timeinput3.text = textValue[9].ToString();
             }
         }
     }
@@ -369,17 +409,35 @@ public class CalendarController : MonoBehaviour
 
     public void Timefield1(InputField TimeField1)
     {
-        
+        Debug.Log("시간 테스트: " + TimeField1.text);
+        time1 = TimeField1.text;
+        if (TimeField1.text == "")
+        {
+            time1 = "";
+        }
+        Debug.Log(time1);
     }
 
     public void Timefield2(InputField TimeField2)
     {
-
+        Debug.Log("시간 테스트: " + TimeField2.text);
+        time2 = TimeField2.text;
+        if (TimeField2.text == "")
+        {
+            time2 = "";
+        }
+        Debug.Log(time2);
     }
 
     public void Timefield3(InputField TimeField3)
     {
-
+        Debug.Log("시간 테스트: " + TimeField3.text);   
+        time3 = TimeField3.text;
+        if (TimeField3.text == "")
+        {
+            time3 = "";
+        }
+        Debug.Log(time3);
     }
 
     public void SaveNote()
@@ -403,6 +461,10 @@ public class CalendarController : MonoBehaviour
         sw.WriteLine(note2);
         sw.WriteLine(note3);
 
+        sw.WriteLine(time1);
+        sw.WriteLine(time2);
+        sw.WriteLine(time3);
+
         sw.Flush();
         sw.Close();
         Debug.Log("save");
@@ -415,7 +477,7 @@ public class CalendarController : MonoBehaviour
         i = 0;
         while (justice == true)
         {
-            if (i < 7)
+            if (i < 10)
             {
                 Debug.Log(textValue[i]);
                 i += 1;
