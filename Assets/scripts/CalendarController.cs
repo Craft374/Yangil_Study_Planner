@@ -16,7 +16,6 @@ public class CalendarController : MonoBehaviour
     public GameObject _item;
     public GameObject bgi;
     public Image BGImage;
-
     public static Text NoteText1;
     public static Text NoteText2;
     public static Text NoteText3;
@@ -49,13 +48,15 @@ public class CalendarController : MonoBehaviour
     [SerializeField]
     public Sprite[] sprites;
     public int index;
-
+    public int monthint;
+    public static Text Monthtext;
     void Start()
     {
         //텍스트 레이어 지정
         APM1 = GameObject.Find("APM Text1").GetComponent<Text>();
         APM2 = GameObject.Find("APM Text2").GetComponent<Text>();
         APM3 = GameObject.Find("APM Text3").GetComponent<Text>();
+        Monthtext = GameObject.Find("MONTH").GetComponent<Text>();
 
         GameObject tabni1 = GameObject.Find("TimeField1");
         timeinput1 = tabni1.GetComponent<InputField>();
@@ -155,24 +156,164 @@ public class CalendarController : MonoBehaviour
 
     void Update()
     {
-        if(_monthNumText.text == "03"||_monthNumText.text == "04" ||_monthNumText.text == "05")
+        switch (int.Parse(_monthNumText.text))
         {
-            BGImage.sprite = sprites[0];
-        }
-
-        if(_monthNumText.text == "06"||_monthNumText.text == "07" ||_monthNumText.text == "08")
-        {
-            BGImage.sprite = sprites[1];
-        }
-
-        if(_monthNumText.text == "09"||_monthNumText.text == "10" ||_monthNumText.text == "11")
-        {
-            BGImage.sprite = sprites[2];
-        }
-
-        if(_monthNumText.text == "12"||_monthNumText.text == "01" ||_monthNumText.text == "02")
-        {
-            BGImage.sprite = sprites[3];
+            case 1:
+                Monthtext.text = "₀₁ January";
+                BGImage.sprite = sprites[3];
+                GameObject.Find("APM button1").GetComponent<Image>().color = new Color32(158,180,206,255);
+                GameObject.Find("APM button2").GetComponent<Image>().color = new Color32(158,180,206,255);
+                GameObject.Find("APM button3").GetComponent<Image>().color = new Color32(158,180,206,255);
+                GameObject.Find("TimeField1").GetComponent<Image>().color = new Color32(158,180,206,255);
+                GameObject.Find("TimeField2").GetComponent<Image>().color = new Color32(158,180,206,255);
+                GameObject.Find("TimeField3").GetComponent<Image>().color = new Color32(158,180,206,255);
+                GameObject.Find("save").GetComponent<Image>().color = new Color32(158,180,206,255);
+                GameObject.Find("disk").GetComponent<Image>().color = new Color32(105,138,179,255);
+                GameObject.Find("Yearbox").GetComponent<Image>().color = new Color32(105,138,179,255);
+                break;
+            case 2:
+                Monthtext.text = "₀₂ February";
+                BGImage.sprite = sprites[3];
+                GameObject.Find("APM button1").GetComponent<Image>().color = new Color32(158,180,206,255);
+                GameObject.Find("APM button2").GetComponent<Image>().color = new Color32(158,180,206,255);
+                GameObject.Find("APM button3").GetComponent<Image>().color = new Color32(158,180,206,255);
+                GameObject.Find("TimeField1").GetComponent<Image>().color = new Color32(158,180,206,255);
+                GameObject.Find("TimeField2").GetComponent<Image>().color = new Color32(158,180,206,255);
+                GameObject.Find("TimeField3").GetComponent<Image>().color = new Color32(158,180,206,255);
+                GameObject.Find("save").GetComponent<Image>().color = new Color32(158,180,206,255);
+                GameObject.Find("disk").GetComponent<Image>().color = new Color32(105,138,179,255);
+                GameObject.Find("Yearbox").GetComponent<Image>().color = new Color32(105,138,179,255);
+                break;
+            case 3:
+                Monthtext.text = "₀₃ March";
+                BGImage.sprite = sprites[0];
+                GameObject.Find("APM button1").GetComponent<Image>().color = new Color32(203,168,204,255);
+                GameObject.Find("APM button2").GetComponent<Image>().color = new Color32(203,168,204,255);
+                GameObject.Find("APM button3").GetComponent<Image>().color = new Color32(203,168,204,255);
+                GameObject.Find("TimeField1").GetComponent<Image>().color = new Color32(203,168,204,255);
+                GameObject.Find("TimeField2").GetComponent<Image>().color = new Color32(203,168,204,255);
+                GameObject.Find("TimeField3").GetComponent<Image>().color = new Color32(203,168,204,255);
+                GameObject.Find("save").GetComponent<Image>().color = new Color32(203,168,204,255);
+                GameObject.Find("disk").GetComponent<Image>().color = new Color32(172,112,173,255);
+                GameObject.Find("Yearbox").GetComponent<Image>().color = new Color32(172,112,173,255);
+                break;
+            case 4:
+                Monthtext.text = "₀₄ April";
+                BGImage.sprite = sprites[0];
+                GameObject.Find("APM button1").GetComponent<Image>().color = new Color32(203,168,204,255);
+                GameObject.Find("APM button2").GetComponent<Image>().color = new Color32(203,168,204,255);
+                GameObject.Find("APM button3").GetComponent<Image>().color = new Color32(203,168,204,255);
+                GameObject.Find("TimeField1").GetComponent<Image>().color = new Color32(203,168,204,255);
+                GameObject.Find("TimeField2").GetComponent<Image>().color = new Color32(203,168,204,255);
+                GameObject.Find("TimeField3").GetComponent<Image>().color = new Color32(203,168,204,255);
+                GameObject.Find("save").GetComponent<Image>().color = new Color32(203,168,204,255);
+                GameObject.Find("disk").GetComponent<Image>().color = new Color32(172,112,173,255);
+                GameObject.Find("Yearbox").GetComponent<Image>().color = new Color32(172,112,173,255);
+                break;
+            case 5:
+                Monthtext.text = "₀₅ May"; 
+                BGImage.sprite = sprites[0];
+                GameObject.Find("APM button1").GetComponent<Image>().color = new Color32(203,168,204,255);
+                GameObject.Find("APM button2").GetComponent<Image>().color = new Color32(203,168,204,255);
+                GameObject.Find("APM button3").GetComponent<Image>().color = new Color32(203,168,204,255);
+                GameObject.Find("TimeField1").GetComponent<Image>().color = new Color32(203,168,204,255);
+                GameObject.Find("TimeField2").GetComponent<Image>().color = new Color32(203,168,204,255);
+                GameObject.Find("TimeField3").GetComponent<Image>().color = new Color32(203,168,204,255);
+                GameObject.Find("save").GetComponent<Image>().color = new Color32(203,168,204,255);
+                GameObject.Find("disk").GetComponent<Image>().color = new Color32(172,112,173,255);
+                GameObject.Find("Yearbox").GetComponent<Image>().color = new Color32(172,112,173,255);
+                break;
+            case 6:
+                Monthtext.text = "₀₆ June";
+                BGImage.sprite = sprites[1];
+                GameObject.Find("APM button1").GetComponent<Image>().color = new Color32(134,193,246,255);
+                GameObject.Find("APM button2").GetComponent<Image>().color = new Color32(134,193,246,255);
+                GameObject.Find("APM button3").GetComponent<Image>().color = new Color32(134,193,246,255);
+                GameObject.Find("TimeField1").GetComponent<Image>().color = new Color32(134,193,246,255);
+                GameObject.Find("TimeField2").GetComponent<Image>().color = new Color32(134,193,246,255);
+                GameObject.Find("TimeField3").GetComponent<Image>().color = new Color32(134,193,246,255);
+                GameObject.Find("save").GetComponent<Image>().color = new Color32(134,193,246,255);
+                GameObject.Find("disk").GetComponent<Image>().color = new Color32(45,124,239,255);
+                GameObject.Find("Yearbox").GetComponent<Image>().color = new Color32(45,124,239,255);
+                break;
+            case 7:
+                Monthtext.text = "₀₇ July";
+                BGImage.sprite = sprites[1];
+                GameObject.Find("APM button1").GetComponent<Image>().color = new Color32(134,193,246,255);
+                GameObject.Find("APM button2").GetComponent<Image>().color = new Color32(134,193,246,255);
+                GameObject.Find("APM button3").GetComponent<Image>().color = new Color32(134,193,246,255);
+                GameObject.Find("TimeField1").GetComponent<Image>().color = new Color32(134,193,246,255);
+                GameObject.Find("TimeField2").GetComponent<Image>().color = new Color32(134,193,246,255);
+                GameObject.Find("TimeField3").GetComponent<Image>().color = new Color32(134,193,246,255);
+                GameObject.Find("save").GetComponent<Image>().color = new Color32(134,193,246,255);
+                GameObject.Find("disk").GetComponent<Image>().color = new Color32(45,124,239,255);
+                GameObject.Find("Yearbox").GetComponent<Image>().color = new Color32(45,124,239,255);
+                break;
+            case 8:
+                Monthtext.text = "₀₈ August";
+                BGImage.sprite = sprites[1];
+                GameObject.Find("APM button1").GetComponent<Image>().color = new Color32(134,193,246,255);
+                GameObject.Find("APM button2").GetComponent<Image>().color = new Color32(134,193,246,255);
+                GameObject.Find("APM button3").GetComponent<Image>().color = new Color32(134,193,246,255);
+                GameObject.Find("TimeField1").GetComponent<Image>().color = new Color32(134,193,246,255);
+                GameObject.Find("TimeField2").GetComponent<Image>().color = new Color32(134,193,246,255);
+                GameObject.Find("TimeField3").GetComponent<Image>().color = new Color32(134,193,246,255);
+                GameObject.Find("save").GetComponent<Image>().color = new Color32(134,193,246,255);
+                GameObject.Find("disk").GetComponent<Image>().color = new Color32(45,124,239,255);
+                GameObject.Find("Yearbox").GetComponent<Image>().color = new Color32(45,124,239,255);
+                break;
+            case 9:
+                Monthtext.text = "₀₉ September";
+                BGImage.sprite = sprites[2];
+                GameObject.Find("APM button1").GetComponent<Image>().color = new Color32(226,139,100,255);
+                GameObject.Find("APM button2").GetComponent<Image>().color = new Color32(226,139,100,255);
+                GameObject.Find("APM button3").GetComponent<Image>().color = new Color32(226,139,100,255);
+                GameObject.Find("TimeField1").GetComponent<Image>().color = new Color32(226,139,100,255);
+                GameObject.Find("TimeField2").GetComponent<Image>().color = new Color32(226,139,100,255);
+                GameObject.Find("TimeField3").GetComponent<Image>().color = new Color32(226,139,100,255);
+                GameObject.Find("save").GetComponent<Image>().color = new Color32(226,139,100,255);
+                GameObject.Find("disk").GetComponent<Image>().color = new Color32(218,110,62,255);
+                GameObject.Find("Yearbox").GetComponent<Image>().color = new Color32(218,110,62,255);
+                break;
+            case 10:
+                Monthtext.text = "₁₀ October";
+                BGImage.sprite = sprites[2];
+                GameObject.Find("APM button1").GetComponent<Image>().color = new Color32(226,139,100,255);
+                GameObject.Find("APM button2").GetComponent<Image>().color = new Color32(226,139,100,255);
+                GameObject.Find("APM button3").GetComponent<Image>().color = new Color32(226,139,100,255);
+                GameObject.Find("TimeField1").GetComponent<Image>().color = new Color32(226,139,100,255);
+                GameObject.Find("TimeField2").GetComponent<Image>().color = new Color32(226,139,100,255);
+                GameObject.Find("TimeField3").GetComponent<Image>().color = new Color32(226,139,100,255);
+                GameObject.Find("save").GetComponent<Image>().color = new Color32(226,139,100,255);
+                GameObject.Find("disk").GetComponent<Image>().color = new Color32(218,110,62,255);
+                GameObject.Find("Yearbox").GetComponent<Image>().color = new Color32(218,110,62,255);
+                break;
+            case 11:
+                Monthtext.text = "₁₁ November";
+                BGImage.sprite = sprites[2];
+                GameObject.Find("APM button1").GetComponent<Image>().color = new Color32(226,139,100,255);
+                GameObject.Find("APM button2").GetComponent<Image>().color = new Color32(226,139,100,255);
+                GameObject.Find("APM button3").GetComponent<Image>().color = new Color32(226,139,100,255);
+                GameObject.Find("TimeField1").GetComponent<Image>().color = new Color32(226,139,100,255);
+                GameObject.Find("TimeField2").GetComponent<Image>().color = new Color32(226,139,100,255);
+                GameObject.Find("TimeField3").GetComponent<Image>().color = new Color32(226,139,100,255);
+                GameObject.Find("save").GetComponent<Image>().color = new Color32(226,139,100,255);
+                GameObject.Find("disk").GetComponent<Image>().color = new Color32(218,110,62,255);
+                GameObject.Find("Yearbox").GetComponent<Image>().color = new Color32(218,110,62,255);
+                break;
+            case 12:
+                Monthtext.text = "₁₂ December";
+                BGImage.sprite = sprites[3];
+                GameObject.Find("APM button1").GetComponent<Image>().color = new Color32(158,180,206,255);
+                GameObject.Find("APM button2").GetComponent<Image>().color = new Color32(158,180,206,255);
+                GameObject.Find("APM button3").GetComponent<Image>().color = new Color32(158,180,206,255);
+                GameObject.Find("TimeField1").GetComponent<Image>().color = new Color32(158,180,206,255);
+                GameObject.Find("TimeField2").GetComponent<Image>().color = new Color32(158,180,206,255);
+                GameObject.Find("TimeField3").GetComponent<Image>().color = new Color32(158,180,206,255);
+                GameObject.Find("save").GetComponent<Image>().color = new Color32(158,180,206,255);
+                GameObject.Find("disk").GetComponent<Image>().color = new Color32(105,138,179,255);
+                GameObject.Find("Yearbox").GetComponent<Image>().color = new Color32(105,138,179,255);
+                break;
         }
     }
 
