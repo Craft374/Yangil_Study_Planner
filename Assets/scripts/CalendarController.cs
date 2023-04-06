@@ -115,7 +115,7 @@ public class CalendarController : MonoBehaviour
             item.transform.SetParent(_item.transform.parent);
             item.transform.localScale = Vector3.one;
             item.transform.localRotation = Quaternion.identity;
-            item.transform.localPosition = new Vector3((i % 7) * 36  + startPos.x, startPos.y - (i / 7) * 30, startPos.z);
+            item.transform.localPosition = new Vector3((i % 7) * 45  + startPos.x, startPos.y - (i / 7) * 40, startPos.z);
 
             _dateItems.Add(item);
         }
@@ -392,14 +392,14 @@ public class CalendarController : MonoBehaviour
         timeinput2.text = "";
         timeinput3.text = "";
 
-        // if (File.Exists(path) == false)
+        /* if (File.Exists(path) == false)
         // {
         //     var file = File.CreateText(fullPath + _yearNumText.text + "-" + _monthNumText.text + "-" + _dayNumText + ".txt");
         //     StreamWriter sw = new StreamWriter(fullPath + _yearNumText.text + "-" + _monthNumText.text + "-" + _dayNumText + ".txt");
         //     //sw.WriteLine("FALSE");
         //     sw.Flush();
         //     sw.Close();
-        // }
+        // }*/
 
         if (File.Exists(path) == true)
         {
